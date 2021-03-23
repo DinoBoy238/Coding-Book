@@ -17,8 +17,6 @@
    margin: 10px;
    float: left;
   }
-  .thief {
-   background-color: red;
      }
   .hidden {
    display: none;
@@ -79,7 +77,6 @@
          }
          
      }
-     board.children[randomNumber-1].className = classToSet + " thief";
  </script>
 </body>
 </html>
