@@ -48,6 +48,7 @@
   function gameLoop() {
    peopleVisible = !peopleVisible;
    createCharacters();
+   flashCharacters();
    loops++;
    if(loops < 12) {
     setTimeout(gameLoop, 1500);
@@ -65,9 +66,8 @@
  }
      function createCharacters() {
          var board = document.getElementById("board");
-         var classsToSet = peopleVisible ? "character visible" : "character hidden";
          for(var index = 0; index < 6; index++) {
-            board.children[index].className = classToSet; board.children[index].innerHTML = "Guest";
+             board.children[index].innerHTML = "Guest";
              board.children[index].onclick= function() {
                  gameScore += -2;
              }
@@ -76,8 +76,10 @@
      board.children[randomNumber-1].innerHTML = "Thief"
          board.children[randomNumber-1].onclick = function() {
              gameScore++;
-         }             board.children[randomNumber-1].className = classToSet + " thief";
+         }
+         
      }
+     board.children[randomNumber-1].className = classToSet + " thief";
  </script>
 </body>
 </html>
