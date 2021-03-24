@@ -21,7 +21,7 @@
    display: none;
   }
      .thief {
-   background: url('Theif.jpg');
+   background: url('Thief.jpg');
       background-size: cover;
      }
   .hidden {
@@ -54,7 +54,7 @@
    createCharacters();
    loops++;
    if(loops < 12) {
-    setTimeout(gameLoop, 3000);
+    setTimeout(gameLoop, peopleVisible ? 1000 : 3000);
    }
    else {
    alert("You scored " + gameScore);
