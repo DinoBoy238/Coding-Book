@@ -4,21 +4,25 @@
  <title>Reaction time game</title>
  <style>
   #board {
+   background: url('background.jpg');
+      background-size: cover;
    border: 1px solid black;
-   background-color: gray;
    height: 350px;
    width: 650px;
   }
   .character {
-   background-color: lightblue;
+   background: url('Guest.jpg');
+      background-size: cover;
    width: 120px;
    height: 120px;
    padding: 10px;
    margin: 10px;
    float: left;
+   display: none;
   }
      .thief {
-         background-color: red;
+   background: url('Theif.jpg');
+      background-size: cover;
      }
   .hidden {
    display: none;
@@ -61,13 +65,13 @@
          var classToSet = peopleVisible ? "character visible" : "character hidden";
          for(var index = 0; index < 6; index++) {
              board.children[index].className = classToSet;
-             board.children[index].innerHTML = "Guest";
+             board.children[index].innerHTML = "";
              board.children[index].onclick= function() {
                  gameScore += -2;
              }
          }
          var randomNumber = Math.floor(Math.random() * 6) + 1;
-     board.children[randomNumber-1].innerHTML = "Thief"
+     board.children[randomNumber-1].innerHTML = ""
          board.children[randomNumber-1].onclick = function() {
              gameScore++;
          }
